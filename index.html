@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="To Do List pour le site de Simplon Sénégal">
+    <meta name="keywords" content="html,css,javascript,to-do">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Simplon | TO Do List</title>
+</head>
+<body>
+    
+   <div id="page">
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>
+                        <small>
+                            To Do List 
+                        </small>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+    <main>
+        <div class="main2">
+             <br>
+            <div class="row main">
+
+                <div class="container mt-3">
+                 
+                    <form id="Form">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-8">
+                                <button class="JPO_open"><img src="img/add.png" height="30px" alt="">  <span class="add">Ajouter une tache</span></button>
+                            </div>
+                            <div class="col-4">
+                                <div class="logout" style="float: right;">
+                                    <a href="connexion.html" >
+                                        <img src="img/power-off.png" alt="deconnexion">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+     
+                    <h4 class="mt-4"><img src="img/liste.png" height="30px" alt=""> Mes taches</h4>
+        
+                    <form id="addForm">
+                        <ul class="list-group" id="items"></ul>
+                        
+                    </form>
+        
+                    <h4 class="mt-4"><img src="img/done.png" height="30px" alt="">Taches terminées</h4>
+        
+                    <form id="completeForm">
+                        <ul class="list-group" id="completedItems"></ul>
+                        <br>
+                    </form>
+ 
+                    <section id="JPO"> 
+                        <div class="row" style="float: right; margin-right: 5px;">
+                            <button class="JPO_close">
+                                <img src="img/cancel.png" height="20px" alt="">
+                            </button>
+                        </div>
+                        <h3>Ajouter une tache</h3>
+                        <form>
+                            <label for="item">Titre</label>
+                            <input type="text" class="form-control" onkeyup="toggleButton(this, 'submit')" id="item"><br>
+                            <label for="Description">Description</label>
+                            <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
+                            <label for="deadline">Date</label>
+                            <input type="date" class="form-control" id="deadline"><br>
+                            <label for="etat">Etat</label>
+                            <input type="text" class="form-control" id="etat"><br>
+                            <label for="priorite">Priorité</label>
+                            <select name="priorite" id="priorite" class="form-control">
+                                <option value="">Faible</option>
+                                <option value="">Moyenne</option>
+                                <option value="">Forte</option>
+                            </select>
+                        </form>
+
+                        <div class="row justify-content-center align-items-center mt-5">
+                            <input type="submit" class="btn JPO_close" id="submit" value="Valider" disabled>
+                        </div>
+    
+                    </section>
+
+                </div>
+ 
+            </div>
+             <br>
+             <br>
+         </div>
+            </div>
+     </main>
+
+    </div>
+    
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+    
+          // Initialize the plugin
+          $('#JPO').popup();
+    
+          // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
+          $.fn.popup.defaults.pagecontainer = '#page'
+        });
+
+      </script>
+</body>
+</html>
