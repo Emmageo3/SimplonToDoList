@@ -7,7 +7,7 @@
     <meta name="description" content="To Do List pour le site de Simplon Sénégal">
     <meta name="keywords" content="html,css,javascript,to-do">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/connexion.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -36,28 +36,32 @@
    <main>
         <div class="main2">
             <br>
-            <div class="container mt-3">
-                <h4>Connexion</h4>
-
-                <p class="erreur"></p>
-
-                <form id="addForm" style="margin-right: 350px; margin-left: 350px;">
-                    <label for="email">Email :</label>
-                    <input type="email" class="form-control" id="email"><br>
-                    <label for="mdp">Mot de passe :</label>
-                    <input type="password" class="form-control" id="mdp"><br>
-                    <div class="row justify-content-center align-items-center">
-                        <input class="soumettre" type="submit" value="Connexion">
+            <div class="row main">
+                <div class="container mt-3">
+                    <div class="row justify-content-center d-block">
+                        <h4>Connexion</h4>
+    
+                        <p class="erreur"></p>
+    
+                        <form id="addForm">
+                            <label for="email">Email :</label>
+                            <input type="email" class="form-control" id="email"><br>
+                            <label for="mdp">Mot de passe :</label>
+                            <input type="password" class="form-control" id="mdp"><br>
+                            <div class="row justify-content-center align-items-center">
+                                <input class="soumettre" type="submit" value="Connexion">
+                            </div>
+                        </form>
+                        </div>
+                    
+                        <div class="row align-items-center justify-content-center mt-4">
+                            <a style="text-align: center; text-decoration: none; color: black; opacity: 50%;" href="inscription.html">Vous avez oublié votre mot de passe ? Recupérez le.</a>
+                        </div>
+                        <div class="row align-items-center justify-content-center mt-4">
+                            <a style="text-align: center; text-decoration: none; color: black; opacity: 50%;" href="inscription.html">Vous n'avez pas de compte ? Veuillez vous inscrire.</a>
+                        </div>
                     </div>
-                </form>
-                
-                <div class="row align-items-center justify-content-center mt-4">
-                    <a style="text-align: center; text-decoration: none; color: black; opacity: 50%;" href="inscription.html">Vous avez oublié votre mot de passe ? Recupérez le.</a>
                 </div>
-                <div class="row align-items-center justify-content-center mt-4">
-                    <a style="text-align: center; text-decoration: none; color: black; opacity: 50%;" href="inscription.html">Vous n'avez pas de compte ? Veuillez vous inscrire.</a>
-                </div>
-
             </div>
             <br>
             <br>

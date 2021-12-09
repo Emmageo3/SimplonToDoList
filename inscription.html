@@ -7,7 +7,7 @@
     <meta name="description" content="To Do List pour le site de Simplon Sénégal">
     <meta name="keywords" content="html,css,javascript,to-do">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/inscription.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -34,37 +34,42 @@
    </header>
 
    <main>
-        <div class="main2">
-            <br>
+    <div class="main2">
+        <br>
+        <div class="row main">
             <div class="container mt-3">
-                <h4>Inscription</h4>
+                <div class="row justify-content-center d-block">
+                    <h4>Inscription</h4>
 
+                    <p class="erreur"></p>
 
-                <form id="addForm" style="margin-right: 350px; margin-left: 350px;">
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" class="form-control" id="prenom"><br>
-                    <label for="nom">Nom :</label>
-                    <input type="text" class="form-control" id="nom"><br>
-                    <label for="email">Email :</label>
-                    <input type="email" class="form-control" id="email"><br>
-                    <label for="mdp1">Mot de passe :</label>
-                    <input type="password" class="form-control" id="mdp1"><br>
-                    <label for="mdp">Confirmer le mot de passe :</label>
-                    <input type="password" class="form-control" id="mdp"><br>
-                    <div class="row justify-content-center align-items-center">
-                            <input class="soumettre" type="submit" value="S'inscrire">
+                    <form id="addForm">
+                        <label for="prenom">Prenom :</label>
+                        <input type="text" class="form-control" id="prenom"><br>
+                        <label for="mdp">Nom :</label>
+                        <input type="nom" class="form-control" id="nom"><br>
+                        <label for="email">Email :</label>
+                        <input type="email" class="form-control" id="email"><br>
+                        <label for="mdp">Mot de passe :</label>
+                        <input type="password" class="form-control" id="mdp"><br>
+                        <label for="password1">Confirmer le mot de passe :</label>
+                        <input type="password" class="form-control" id="mdp1"><br>
+                        <div class="row justify-content-center align-items-center">
+                            <input class="soumettre" type="submit" value="Connexion">
+                        </div>
+                    </form>
                     </div>
-                </form>
-
-                <div class="row align-items-center justify-content-center mt-4">
-                    <a style="text-align: center; text-decoration: none; color: black; opacity: 50%;" href="connexion.html">Vous avez déja un compte ? Veuillez vous connectez.</a>
+                
+                    <div class="row align-items-center justify-content-center mt-4">
+                        <a style="text-align: center; text-decoration: none; color: black; opacity: 50%;" href="connexion.html">Vous avez déja un compte ? Connectez-vous  </a>
+                    </div>
                 </div>
-
             </div>
-            <br>
-            <br>
         </div>
-	</main>
+        <br>
+        <br>
+    </div>
+</main>
     
 </body>
 </html>

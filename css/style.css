@@ -157,6 +157,15 @@ a img{
   border: 2px solid #ec0033;
   color: #ec0033;
 }
+.JPO_close{
+  background-color: white;
+  border: none;
+}
+
+#addForm{
+  margin-right: 350px;
+  margin-left: 350px;
+}
 
 
 /* Mobile Styles */
@@ -337,6 +346,14 @@ a img{
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  #addForm{
+    margin: 0;
+  }
+
+  .connexion1{
+    width: 100%;
+  }
 }
 
 
@@ -515,6 +532,12 @@ a img{
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.connexion1{
+  width: 70%;
+}
+
+
 }
 
 
@@ -872,6 +895,10 @@ a img{
   margin-left: 10px;
   margin-right: 10px;
 }
+
+.connexion1{
+  width: 100%;
+}
 }
 
 
@@ -1048,6 +1075,10 @@ a img{
 .Popup{
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.connexion1{
+  width: 100%;
 }
 }
 
