@@ -4,21 +4,35 @@ let apiUrl ="https://hugjzyfkvsckcizjeztq.supabase.co"
 let email = document.querySelector("#email")
 let password = document.querySelector("#mdp")
 let soumettre = document.querySelector('#addForm')
+let erreur = document.querySelector(".erreur")
 // Creation du client Supabase
 supabase = supabase.createClient(apiUrl,apiKey)
 // Reccueil informations de connexion
 soumettre.onsubmit = function(e){
     e.preventDefault()
+    // Validation des donnees
+    if (password.value =="") {
+        erreur.classList.add("text-danger")
+        erreur.innerHTML="Le mot de passe ne doit pas être vide";   
+    }
+    // traitement de la requete
     supabase
     .from("user")
     .select()
-    .eq("email",email.value)
+    .eq("email",email.value.toLowerCase())
     .eq("password",password.value)
     .then((data)=>{
+        // email ou mot de passe invalide
         if (data.body.length == 0) {
-            console.log("Login ou mot de passe incorrect");
-        } else {
-            console.log(data.body);
+            erreur.classList.add("text-danger")
+            erreur.innerHTML="Login ou mot de passe incorrect";
+        } 
+        // Redirection vers la page des taches
+        else {
+            console.log(data.body[0].id);
+            sessionStorage.setItem("email",data.body[0].email)
+            sessionStorage.setItem("id",data.body[0].id)
+            document.location.href="../index.html"
         }
     })
 
