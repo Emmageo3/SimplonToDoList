@@ -37,16 +37,4 @@ soumettre.onsubmit = function(e){
     })
     }
 }
-// ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
-    //Reccueil des donnees entrees
-    let addUserForm = document.querySelector("#addUserForm")
-    let prenom =document.querySelector("#prenom")
-    let nom = document.querySelector("#nom")
-    let newEmail = document.querySelector("#newEmail")
-    let newMdp = document.querySelector("#newMdp")
-    let confirmMdp = this.document.querySelector("#confirmMdp")
-    addUserForm.addEventListener("submit",(e)=>{
-        e.preventDefault()
-        alert("formulaire soumis")
-    })
 })
