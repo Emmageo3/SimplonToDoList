@@ -199,14 +199,14 @@ soumettre.onsubmit = function(e){
 
 
 const btnValider=document.querySelector('#submit')
-const addTask=document.querySelector("#form_add_task")
-const description=document.querySelector("#Description").value
-const deadline=document.querySelector("#deadline").value
-const etat=document.querySelector("#etat").value
+const description=document.querySelector("#Description")
+const deadline=document.querySelector("#deadline")
+const etat=document.querySelector("#etat")
 const priorite=document.querySelector("#priorite")
-const titre=document.querySelector("#item").value
+const titre=document.querySelector("#item")
 const listeTache=document.querySelector("#listeTache")
 
+//function qui permet de lister les taches
 async function getTaches()
       {
         let { data: taches, error } = await supabase
@@ -222,53 +222,50 @@ async function getTaches()
         listeTache.innerHTML+=liste
         console.log(taches)
       }
-     
 
-function ajouterTache(){
+function addTask(){
     let selectValue=priorite.options[priorite.selectedIndex].value
     supabase
         .from('taches')
         .insert([
             {
-                titre: titre,
-                description: description,
-                date: deadline,
-                etat: etat,
+               
+                titre: titre.value,
+                description: description.value,
+                date: deadline.value,
+                etat: etat.value,
                 priorite: selectValue
             },
             ]).then(function(data)
                 {
-                    alert(data)
+                    console.log(data)
                 })
+                alert.log("bonjour")
+               
 }
-
-//ajouterTache()
-getTaches()
-/*
-btnValider.addEventListener('click',function(){
-    supabase
+//fonction de suppression
+async function deleteTask(id)
+{
+    let { data, error } = await supabase
+    .from('taches')
+    .delete()
+    .eq('id', id)
+}
+async function updateTask(id)
+{
+    let { data, error } = await supabase
         .from('taches')
-        .insert([
-            { description: "bonjour", 
-              priorite: "salut",
-              etat: "en cours",
-              deadline: "2021-12-26T15:08:59",
-              titre: "tache une"
-            },
-            ]).then(function(data)
-                {
-                    alert(data)
-                })
+        .update({ titre:"titre modifer"})
+        //.update({ titre: titre.value,description: description.value, date: deadline.value, etat:etat.value, priorite:priorite.value })
+        .eq('id',id )
+}
+btnValider.addEventListener('click',function(e)
+{
+    e.preventDefault()
+    addTask()
+})
+updateTask(1)
+deleteTask(6)
+getTaches()
 
-})*/
-// var supabase = supabase.createClient(apiUrl,apiKey)
-// supabase.auth.signIn({
-
-// }) 
-// supabase
-// .from("users")
-// .select()
-// .then(data=>{
-//     console.log(data);
-// })
 })
