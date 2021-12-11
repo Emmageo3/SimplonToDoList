@@ -37,6 +37,8 @@ window.addEventListener('load',function(){
         })
         }
     }
+}
+})
     // ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
         //Reccueil des donnees entrees
         let addUserForm = document.querySelector("#addUserForm")
