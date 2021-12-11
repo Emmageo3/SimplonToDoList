@@ -15,6 +15,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <title>Simplon | TO Do List</title>
 </head>
 <body>
@@ -63,7 +67,9 @@
                         <ul class="list-group" id="items"></ul>
                         
                     </form>
-        
+                    <div id="listeTache">
+
+                    </div>
                     <h4 class="mt-4"><img src="img/done.png" height="30px" alt="">Taches terminées</h4>
         
                     <form id="completeForm">
@@ -78,9 +84,10 @@
                             </button>
                         </div>
                         <h3>Ajouter une tache</h3>
-                        <form>
+                        <form id="form_add_task">
                             <label for="item">Titre</label>
                             <input type="text" class="form-control" onkeyup="toggleButton(this, 'submit')" id="item"><br>
+                     
                             <label for="Description">Description</label>
                             <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
                             <label for="deadline">Date</label>
@@ -89,16 +96,14 @@
                             <input type="text" class="form-control" id="etat"><br>
                             <label for="priorite">Priorité</label>
                             <select name="priorite" id="priorite" class="form-control">
-                                <option value="">Faible</option>
-                                <option value="">Moyenne</option>
-                                <option value="">Forte</option>
+                                <option value="Faible">Faible</option>
+                                <option value="Moyenne">Moyenne</option>
+                                <option value="Forte">Forte</option>
                             </select>
-                        </form>
-
-                        <div class="row justify-content-center align-items-center mt-5">
-                            <input type="submit" class="btn JPO_close" id="submit" value="Valider" disabled>
-                        </div>
-    
+                            <div class="row justify-content-center align-items-center mt-5">
+                                <input type="submit" class="btn" id="submit" value="Valider" >
+                            </div>
+                        </form>    
                     </section>
 
                 </div>
@@ -112,20 +117,19 @@
 
     </div>
     
-    <script src="js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
+
 
     <script>
         $(document).ready(function() {
-    
-          // Initialize the plugin
+             // Initialize the plugin
           $('#JPO').popup();
     
           // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
           $.fn.popup.defaults.pagecontainer = '#page'
-        });
 
+
+
+        });
       </script>
 </body>
 </html>

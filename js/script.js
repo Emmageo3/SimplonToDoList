@@ -36,7 +36,231 @@ soumettre.onsubmit = function(e){
         }
     })
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const btnValider=document.querySelector('#submit')
+const addTask=document.querySelector("#form_add_task")
+const description=document.querySelector("#Description").value
+const deadline=document.querySelector("#deadline").value
+const etat=document.querySelector("#etat").value
+const priorite=document.querySelector("#priorite")
+const titre=document.querySelector("#item").value
+const listeTache=document.querySelector("#listeTache")
+
+async function getTaches()
+      {
+        let { data: taches, error } = await supabase
+                                .from('taches')
+                                .select('*')
+        console.log(error)
+        let liste="<ul>"
+        for(let tache of taches)
+        {
+          liste+=`<li> ${tache.id} titre: ${tache.titre} description: ${tache.description} deadline: ${tache.date} priorite: ${tache.priorite}</li>`
+        }
+        liste+="</ul>"
+        listeTache.innerHTML+=liste
+        console.log(taches)
+      }
+     
+
+function ajouterTache(){
+    let selectValue=priorite.options[priorite.selectedIndex].value
+    supabase
+        .from('taches')
+        .insert([
+            {
+                titre: titre,
+                description: description,
+                date: deadline,
+                etat: etat,
+                priorite: selectValue
+            },
+            ]).then(function(data)
+                {
+                    alert(data)
+                })
+}
+
+//ajouterTache()
+getTaches()
+/*
+btnValider.addEventListener('click',function(){
+    supabase
+        .from('taches')
+        .insert([
+            { description: "bonjour", 
+              priorite: "salut",
+              etat: "en cours",
+              deadline: "2021-12-26T15:08:59",
+              titre: "tache une"
+            },
+            ]).then(function(data)
+                {
+                    alert(data)
+                })
+
+})*/
 // var supabase = supabase.createClient(apiUrl,apiKey)
 // supabase.auth.signIn({
 
