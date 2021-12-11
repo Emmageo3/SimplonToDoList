@@ -47,7 +47,9 @@ window.addEventListener('load',function(){
                         })
                         .then((data)=>{
                         console.log(data.body[0].id);
-                        document.location.href="../connexion.html"
+                        sessionStorage.setItem("email",data.body[0].email)
+                        sessionStorage.setItem("id",data.body[0].id)
+                        window.location.href="connexion.html"
                         })
                     } 
                     // si l'email existe deja
