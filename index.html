@@ -59,8 +59,8 @@
      
                     <h4 class="mt-4"><img src="img/liste.png" height="30px" alt=""> Mes taches</h4>
         
-                    <form id="addForm">
-                        <ul class="list-group" id="items"></ul>
+                    <form id="tasks">
+                        <ul class="list-group" id="task"></ul>
                         
                     </form>
         
@@ -78,15 +78,13 @@
                             </button>
                         </div>
                         <h3>Ajouter une tache</h3>
-                        <form>
-                            <label for="item">Titre</label>
-                            <input type="text" class="form-control" onkeyup="toggleButton(this, 'submit')" id="item"><br>
+                        <form id="taches">
+                            <label for="titre">Titre</label>
+                            <input type="text" class="form-control" onkeyup="toggleButton(this, 'submit')" id="ttre"><br>
                             <label for="Description">Description</label>
                             <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
                             <label for="deadline">Date</label>
                             <input type="date" class="form-control" id="deadline"><br>
-                            <label for="etat">Etat</label>
-                            <input type="text" class="form-control" id="etat"><br>
                             <label for="priorite">Priorité</label>
                             <select name="priorite" id="priorite" class="form-control">
                                 <option value="">Faible</option>
@@ -96,7 +94,7 @@
                         </form>
 
                         <div class="row justify-content-center align-items-center mt-5">
-                            <input type="submit" class="btn JPO_close" id="submit" value="Valider" disabled>
+                            <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
                         </div>
     
                     </section>
@@ -127,5 +125,7 @@
         });
 
       </script>
+
+      
 </body>
 </html>
