@@ -32,7 +32,7 @@ window.addEventListener('load',function(){
                 console.log(data.body[0].id);
                 sessionStorage.setItem("email",data.body[0].email)
                 sessionStorage.setItem("id",data.body[0].id)
-                window.location.href="../index.html"
+                window.location.href="index.html"
             }
         })
         }
