@@ -7,15 +7,15 @@ let soumettre = document.querySelector('#addForm')
 let erreur = document.querySelector(".erreur")
 // Creation du client Supabase
 supabase = supabase.createClient(apiUrl,apiKey)
-// Reccueil informations de connexion
+// ==================================================Reccueil informations de connexion========================================//
 soumettre.onsubmit = function(e){
     e.preventDefault()
     // Validation des donnees
     if (password.value =="") {
         erreur.classList.add("text-danger")
         erreur.innerHTML="Le mot de passe ne doit pas être vide";   
-    }
-    // traitement de la requete
+    }else{
+      // traitement de la requete
     supabase
     .from("user")
     .select()
@@ -35,16 +35,18 @@ soumettre.onsubmit = function(e){
             document.location.href="../index.html"
         }
     })
-
+    }
 }
-// var supabase = supabase.createClient(apiUrl,apiKey)
-// supabase.auth.signIn({
-
-// }) 
-// supabase
-// .from("users")
-// .select()
-// .then(data=>{
-//     console.log(data);
-// })
+// ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
+    //Reccueil des donnees entrees
+    let addUserForm = document.querySelector("#addUserForm")
+    let prenom =document.querySelector("#prenom")
+    let nom = document.querySelector("#nom")
+    let newEmail = document.querySelector("#newEmail")
+    let newMdp = document.querySelector("#newMdp")
+    let confirmMdp = this.document.querySelector("#confirmMdp")
+    addUserForm.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        alert("formulaire soumis")
+    })
 })

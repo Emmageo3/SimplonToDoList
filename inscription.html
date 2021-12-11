@@ -15,6 +15,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/inscription.js"></script>
     <title>Simplon | TO Do List</title>
 </head>
 <body>
@@ -41,9 +43,9 @@
                 <div class="row justify-content-center d-block">
                     <h4>Inscription</h4>
 
-                    <p class="erreur"></p>
+                    <p class="erreur text-danger"></p>
 
-                    <form id="addForm">
+                    <form id="addUserForm">
                         <label for="prenom">Prenom :</label>
                         <input type="text" class="form-control" id="prenom"><br>
                         <label for="mdp">Nom :</label>
@@ -53,7 +55,7 @@
                         <label for="mdp">Mot de passe :</label>
                         <input type="password" class="form-control" id="mdp"><br>
                         <label for="password1">Confirmer le mot de passe :</label>
-                        <input type="password" class="form-control" id="mdp1"><br>
+                        <input type="password" class="form-control" id="confirmMdp"><br>
                         <div class="row justify-content-center align-items-center">
                             <input class="soumettre" type="submit" value="Connexion">
                         </div>
