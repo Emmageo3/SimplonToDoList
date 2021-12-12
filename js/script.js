@@ -37,7 +37,7 @@ window.addEventListener('load',function(){
         })
         }
     }
-}
+
 })
     // ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
         //Reccueil des donnees entrees
@@ -51,4 +51,116 @@ window.addEventListener('load',function(){
             e.preventDefault()
             alert("formulaire soumis")
         })
-    })
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ==================================================Fonctionnalite Ajouter une tache========================================//
+//============================recuperation des donnees du formulaire======
+
+const btnValider=document.querySelector('#submit')
+const description=document.querySelector("#Description")
+const deadline=document.querySelector("#deadline")
+const etat=document.querySelector("#etat")
+const priorite=document.querySelector("#priorite")
+const titre=document.querySelector("#item")
+const listeTache=document.querySelector("#listeTache")
+
+function addTask(){
+    let selectValue=priorite.options[priorite.selectedIndex].value
+    supabase
+        .from('taches')
+        .insert([
+            {
+               
+                titre: titre.value,
+                description: description.value,
+                date: deadline.value,
+                etat: etat.value,
+                priorite: selectValue
+            },
+            ]).then(function(data)
+                {
+                    console.log(data)
+                })
+                alert.log("bonjour")
+               
+}
