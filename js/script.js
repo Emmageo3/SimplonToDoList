@@ -133,7 +133,7 @@ window.addEventListener('load',function(){
 
 
 
-// ==================================================Fonctionnalite Ajouter une tache========================================//
+// ==================================================Fonctionnalite gestion des taches========================================//
 //============================recuperation des donnees du formulaire======
 
 const btnValider=document.querySelector('#submit')
@@ -143,7 +143,7 @@ const etat=document.querySelector("#etat")
 const priorite=document.querySelector("#priorite")
 const titre=document.querySelector("#item")
 const listeTache=document.querySelector("#listeTache")
-
+//fonction d'ajout
 function addTask(){
     let selectValue=priorite.options[priorite.selectedIndex].value
     supabase
@@ -164,3 +164,44 @@ function addTask(){
                 alert.log("bonjour")
                
 }
+//fonction de lister les taches
+async function getTaches()
+      {
+        let { data: taches, error } = await supabase
+                                .from('taches')
+                                .select('*')
+        console.log(error)
+        let liste="<ul>"
+        for(let tache of taches)
+        {
+          liste+=`<li> ${tache.id} titre: ${tache.titre} description: ${tache.description} deadline: ${tache.date} priorite: ${tache.priorite}</li>`
+        }
+        liste+="</ul>"
+        listeTache.innerHTML+=liste
+        console.log(taches)
+      }
+//fonction de suppression d'une tache
+      async function deleteTask(id)
+      {
+          let { data, error } = await supabase
+          .from('taches')
+          .delete()
+          .eq('id', id)
+      }
+    //fonction de modification d'une tache
+async function updateTask(id)
+{
+    let { data, error } = await supabase
+        .from('taches')
+        .update({ titre:"titre modifer"})
+        //.update({ titre: titre.value,description: description.value, date: deadline.value, etat:etat.value, priorite:priorite.value })
+        .eq('id',id )
+}
+btnValider.addEventListener('click',function(e)
+{
+    e.preventDefault()
+    addTask()
+})
+updateTask(1)
+deleteTask(6)
+getTaches()
