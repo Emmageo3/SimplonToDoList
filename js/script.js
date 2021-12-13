@@ -29,9 +29,10 @@ window.addEventListener('load',function(){
             } 
             // Redirection vers la page des taches
             else {
-                console.log(data.body[0].id);
                 sessionStorage.setItem("email",data.body[0].email)
                 sessionStorage.setItem("id",data.body[0].id)
+                sessionStorage.setItem("prenom",data.body[0].prenom)
+                sessionStorage.setItem("nom",data.body[0].nom)
                 document.location.href="../index.html"
 
 

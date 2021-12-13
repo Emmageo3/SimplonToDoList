@@ -15,6 +15,8 @@ window.addEventListener("load",function(){
     const listeTache=document.querySelector("#listeTache")
     let allTask =document.querySelector("#allTask")
     let erreurSaisie = document.getElementById('erreurSaisie')
+    let connected = document.querySelector(".connected-user")
+    connected.textContent = sessionStorage.getItem("prenom").toUpperCase()+" "+ sessionStorage.getItem("nom").toUpperCase() 
     // Creation du client Supabase
     supabase = supabase.createClient(apiUrl,apiKey)
     //fonction d'ajout
@@ -28,7 +30,8 @@ window.addEventListener("load",function(){
                     description: description.value,
                     date: deadline.value,
                     etat: etat.value,
-                    priorite: priorite.value
+                    priorite: priorite.value,
+                    idUser:sessionStorage.getItem("id")
                 },
                 ]).then(function(data)
                     {
