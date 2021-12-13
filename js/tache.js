@@ -46,6 +46,7 @@ window.addEventListener("load",function(){
             let { data: taches, error } = await supabase
                                     .from('taches')
                                     .select('*')
+                                    .order('date', { ascending: true})
 
                                   
             console.log(error)
