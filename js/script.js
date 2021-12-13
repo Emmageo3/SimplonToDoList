@@ -32,26 +32,15 @@ window.addEventListener('load',function(){
                 console.log(data.body[0].id);
                 sessionStorage.setItem("email",data.body[0].email)
                 sessionStorage.setItem("id",data.body[0].id)
-                window.location.href="index.html"
+                document.location.href="../index.html"
             }
         })
         }
     }
 
 })
-    // ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
-        //Reccueil des donnees entrees
-        let addUserForm = document.querySelector("#addUserForm")
-        let prenom =document.querySelector("#prenom")
-        let nom = document.querySelector("#nom")
-        let newEmail = document.querySelector("#newEmail")
-        let newMdp = document.querySelector("#newMdp")
-        let confirmMdp = this.document.querySelector("#confirmMdp")
-        addUserForm.addEventListener("submit",(e)=>{
-            e.preventDefault()
-            alert("formulaire soumis")
-        })
-  
+
+})
 
 
 
