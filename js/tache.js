@@ -50,6 +50,8 @@ window.addEventListener("load",function(){
                                     .from('taches')
                                     .select('*')
                                     .eq("idUser",sessionStorage.getItem("id"))
+
+                                    .order('date', { ascending: true})
             console.log(error)
             for(let tache of taches){
               newTask = document.createElement('li')
@@ -64,7 +66,21 @@ window.addEventListener("load",function(){
               newTask.appendChild(details)
               details.setAttribute('class', 'details col-6')
               details.setAttribute('id', 'details')
+              if (tache.priorite == "forte") {
+                newTask.style.border='4px solid red';
+                newTask.style.color = 'black  '
+                details.style.backgroundColor = 'grey'
+                details.style.color = 'black'
+              }
+
+              if (tache.priorite == "moyenne") {
+                newTask.style.border='4px solid orange ';
+                newTask.style.color = 'black'
+                details.style.backgroundColor = 'grey'
+                details.style.color = 'black'
+              }
             }
+            
           }
     getTaches()
 
