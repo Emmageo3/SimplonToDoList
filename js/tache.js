@@ -46,6 +46,8 @@ window.addEventListener("load",function(){
             let { data: taches, error } = await supabase
                                     .from('taches')
                                     .select('*')
+
+                                  
             console.log(error)
             for(let tache of taches){
               newTask = document.createElement('li')
@@ -60,7 +62,21 @@ window.addEventListener("load",function(){
               newTask.appendChild(details)
               details.setAttribute('class', 'details col-6')
               details.setAttribute('id', 'details')
+              if (tache.priorite == "forte") {
+                newTask.style.backgroundColor='green';
+                newTask.style.color = 'white'
+                details.style.backgroundColor = 'white'
+                details.style.color = 'black'
+              }
+
+              if (tache.priorite == "moyenne") {
+                newTask.style.backgroundColor='yellow';
+                newTask.style.color = 'black'
+                details.style.backgroundColor = 'white'
+                details.style.color = 'black'
+              }
             }
+            
           }
     getTaches()
 
@@ -83,7 +99,12 @@ window.addEventListener("load",function(){
     // }
     submit.addEventListener('click',function(){
       addTask()
+
+      
+
       getTaches()
+
+      
     })
     }
   })

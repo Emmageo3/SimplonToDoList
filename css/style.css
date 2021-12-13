@@ -182,7 +182,7 @@ a img{
 .details{
   border: none;
   border-radius: 15px;
-  background-color: #ec0033;
+  background-color: grey;
   color: #fff;
   transition: .3s;
   padding-top: 1rem;
