@@ -1,7 +1,9 @@
 window.addEventListener('load',function(){
     let apiKey ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzOTA1NTkxNCwiZXhwIjoxOTU0NjMxOTE0fQ.-2XaMjoQGUNkDKV0zxC67vLkbmRO0TJBWfX1FktKxK4"
     let apiUrl ="https://hugjzyfkvsckcizjeztq.supabase.co"
+
     // Creation du client Supabase
+    
     supabase = supabase.createClient(apiUrl,apiKey)
     // ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
         // Reccueil des donnees entrees
@@ -54,7 +56,7 @@ window.addEventListener('load',function(){
                     } 
                     // si l'email existe deja
                     else {
-                        erreur.textContent ="L'email existe déjà \n"
+                        erreur.textContent ="Cet adresse email existe déjà \n"
                     }
                 })
 

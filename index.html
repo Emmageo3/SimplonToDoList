@@ -82,11 +82,15 @@
                         <h3>Ajouter une tache</h3>
                         <form id="addTask">
                             <label for="titre">Titre</label>
+
                             <input type="text" class="form-control" id="titre"><br>
+
                             <label for="Description">Description</label>
                             <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
                             <label for="deadline">Date</label>
                             <input type="date" class="form-control" id="deadline"><br>
+                            <label for="deadline">heure</label>
+                            <input type="time" class="form-control" id="heure"><br>
                             <label for="priorite">Priorité</label>
                             <select name="priorite" id="priorite" class="form-control">
                                 <option value="faible">Faible</option>
@@ -128,6 +132,7 @@
           // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
           $.fn.popup.defaults.pagecontainer = '#page'
         });
+
 
       </script>
 

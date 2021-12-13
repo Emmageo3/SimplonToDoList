@@ -33,9 +33,110 @@ window.addEventListener('load',function(){
                 sessionStorage.setItem("email",data.body[0].email)
                 sessionStorage.setItem("id",data.body[0].id)
                 document.location.href="../index.html"
+
+
             }
         })
         }
     }
 
+
 })
+
+            let titre = document.getElementById('titre')
+            let description = document.getElementById('Description')
+            let deadline = document.getElementById('deadline')
+            let priorite = document.getElementById('priorite')
+
+            supabase.from("taches").insert({
+                titre:email.value.toLowerCase(),
+                description:mdp.value.toLowerCase(),
+                date:deadline.value.toLowerCase(),
+                priorite:nom.value.toLowerCase()
+            })
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
