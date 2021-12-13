@@ -33,12 +33,24 @@ window.addEventListener('load',function(){
                 sessionStorage.setItem("email",data.body[0].email)
                 sessionStorage.setItem("id",data.body[0].id)
                 document.location.href="../index.html"
+
+
             }
         })
         }
     }
 
-})
+    let titre = document.getElementById('titre')
+            let description = document.getElementById('Description')
+            let deadline = document.getElementById('deadline')
+            let priorite = document.getElementById('priorite')
+
+            supabase.from("taches").insert({
+                titre:email.value.toLowerCase(),
+                description:mdp.value.toLowerCase(),
+                date:deadline.value.toLowerCase(),
+                priorite:nom.value.toLowerCase()
+            })
 
 })
 
@@ -122,75 +134,6 @@ window.addEventListener('load',function(){
 
 
 
-// ==================================================Fonctionnalite gestion des taches========================================//
-//============================recuperation des donnees du formulaire======
 
-const btnValider=document.querySelector('#submit')
-const description=document.querySelector("#Description")
-const deadline=document.querySelector("#deadline")
-const etat=document.querySelector("#etat")
-const priorite=document.querySelector("#priorite")
-const titre=document.querySelector("#item")
-const listeTache=document.querySelector("#listeTache")
-//fonction d'ajout
-function addTask(){
-    let selectValue=priorite.options[priorite.selectedIndex].value
-    supabase
-        .from('taches')
-        .insert([
-            {
-               
-                titre: titre.value,
-                description: description.value,
-                date: deadline.value,
-                etat: etat.value,
-                priorite: selectValue
-            },
-            ]).then(function(data)
-                {
-                    console.log(data)
-                })
-                alert.log("bonjour")
-               
-}
-//fonction de lister les taches
-async function getTaches()
-      {
-        let { data: taches, error } = await supabase
-                                .from('taches')
-                                .select('*')
-        console.log(error)
-        let liste="<ul>"
-        for(let tache of taches)
-        {
-          liste+=`<li> ${tache.id} titre: ${tache.titre} description: ${tache.description} deadline: ${tache.date} priorite: ${tache.priorite}</li>`
-        }
-        liste+="</ul>"
-        listeTache.innerHTML+=liste
-        console.log(taches)
-      }
-//fonction de suppression d'une tache
-      async function deleteTask(id)
-      {
-          let { data, error } = await supabase
-          .from('taches')
-          .delete()
-          .eq('id', id)
-      }
-    //fonction de modification d'une tache
-async function updateTask(id)
-{
-    let { data, error } = await supabase
-        .from('taches')
-        .update({ titre:"titre modifer"})
-        //.update({ titre: titre.value,description: description.value, date: deadline.value, etat:etat.value, priorite:priorite.value })
-        .eq('id',id )
-}
-btnValider.addEventListener('click',function(e)
-{
-    e.preventDefault()
-    addTask()
-})
-updateTask(1)
-deleteTask(6)
-getTaches()
+
+
