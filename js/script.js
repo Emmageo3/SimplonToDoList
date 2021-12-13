@@ -43,17 +43,6 @@ window.addEventListener('load',function(){
 
 })
 
-            let titre = document.getElementById('titre')
-            let description = document.getElementById('Description')
-            let deadline = document.getElementById('deadline')
-            let priorite = document.getElementById('priorite')
-
-            supabase.from("taches").insert({
-                titre:email.value.toLowerCase(),
-                description:mdp.value.toLowerCase(),
-                date:deadline.value.toLowerCase(),
-                priorite:nom.value.toLowerCase()
-            })
 
 
 
