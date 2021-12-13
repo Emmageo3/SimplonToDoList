@@ -40,7 +40,10 @@ window.addEventListener('load',function(){
         }
     }
 
-    let titre = document.getElementById('titre')
+
+})
+
+            let titre = document.getElementById('titre')
             let description = document.getElementById('Description')
             let deadline = document.getElementById('deadline')
             let priorite = document.getElementById('priorite')
