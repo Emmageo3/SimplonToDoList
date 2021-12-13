@@ -15,6 +15,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Merienda&family=Poppins:wght@500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/tache.js"></script>
     <title>Simplon | TO Do List</title>
 </head>
 <body>
@@ -58,7 +60,7 @@
                     </form>
      
                     <h4 class="mt-4"><img src="img/liste.png" height="30px" alt=""> Mes taches</h4>
-        
+                    <ul id="allTask"></ul>
                     <form id="tasks">
                         <ul class="list-group" id="task"></ul>
                         
@@ -78,24 +80,29 @@
                             </button>
                         </div>
                         <h3>Ajouter une tache</h3>
-                        <form id="taches">
+                        <form id="addTask">
                             <label for="titre">Titre</label>
-                            <input type="text" class="form-control" onkeyup="toggleButton(this, 'submit')" id="ttre"><br>
+                            <input type="text" class="form-control" id="titre"><br>
                             <label for="Description">Description</label>
                             <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
                             <label for="deadline">Date</label>
                             <input type="date" class="form-control" id="deadline"><br>
                             <label for="priorite">Priorité</label>
                             <select name="priorite" id="priorite" class="form-control">
-                                <option value="">Faible</option>
-                                <option value="">Moyenne</option>
-                                <option value="">Forte</option>
+                                <option value="faible">Faible</option>
+                                <option value="moyenne">Moyenne</option>
+                                <option value="forte">Forte</option>
                             </select>
+                            <label for="priorite">Etat</label>
+                            <select  id="etat" class="form-control">
+                                <option value="debut">Debut</option>
+                                <option value="en cours">En cours</option>
+                                <option value="termine">Termine</option>
+                            </select>
+                            <div class="row justify-content-center align-items-center mt-5">
+                                <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
+                            </div>
                         </form>
-
-                        <div class="row justify-content-center align-items-center mt-5">
-                            <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
-                        </div>
     
                     </section>
 
