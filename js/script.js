@@ -20,7 +20,7 @@ window.addEventListener('load',function(){
         .from("user")
         .select()
         .eq("email",email.value.toLowerCase())
-        .eq("password",password.value)
+        .eq("password",sha256(password.value))
         .then((data)=>{
             // email ou mot de passe invalide
             if (data.body.length == 0) {
