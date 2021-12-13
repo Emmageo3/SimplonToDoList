@@ -178,6 +178,7 @@ a img{
   padding: 1rem;
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 .details{
   border: none;

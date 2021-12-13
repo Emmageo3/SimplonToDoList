@@ -63,14 +63,14 @@ window.addEventListener("load",function(){
               details.setAttribute('class', 'details col-6')
               details.setAttribute('id', 'details')
               if (tache.priorite == "forte") {
-                newTask.style.backgroundColor='green';
-                newTask.style.color = 'white'
+                newTask.style.backgroundColor='red';
+                newTask.style.color = 'black  '
                 details.style.backgroundColor = 'white'
                 details.style.color = 'black'
               }
 
               if (tache.priorite == "moyenne") {
-                newTask.style.backgroundColor='yellow';
+                newTask.style.backgroundColor='orange';
                 newTask.style.color = 'black'
                 details.style.backgroundColor = 'white'
                 details.style.color = 'black'
