@@ -55,7 +55,6 @@ window.addEventListener('load',function(){
                 priorite:nom.value.toLowerCase()
             })
 
-})
 
 
 
