@@ -11,6 +11,7 @@ const priorite=document.querySelector("#priorite")
 const titre=document.querySelector("#titre")
 const listeTache=document.querySelector("#listeTache")
 let allTask =document.querySelector("#allTask")
+let erreurSaisie = document.getElementById('erreurSaisie')
 // Creation du client Supabase
  supabase = supabase.createClient(apiUrl,apiKey)
 //fonction d'ajout
@@ -30,6 +31,10 @@ function addTask(){
                 {
                     console.log(data)
                 })
+
+                if (titre.value = "" || description.value == "" || date.value == "" || etat.value == "" || priorite.value == "") {
+                  erreurSaisie.innerHTML = "Les champs ne doivent pas etre vides !!"
+                }
                
 }
 //fonction de lister les taches
@@ -40,9 +45,9 @@ async function getTaches()
                                 .select('*')
         console.log(error)
         for(let tache of taches){
-          newTask = document.createElement('div')
-          newTask.innerHTML = tache.id
-          allTask.appendChild(newTask)
+          newTask = document.createElement('li')
+          newTask.innerHTML = tache.titre
+          task.appendChild(newTask)
         }
       }
 getTaches()
