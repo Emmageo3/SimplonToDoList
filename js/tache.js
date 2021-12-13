@@ -49,6 +49,7 @@ window.addEventListener("load",function(){
             let { data: taches, error } = await supabase
                                     .from('taches')
                                     .select('*')
+                                    .eq("idUser",sessionStorage.getItem("id"))
             console.log(error)
             for(let tache of taches){
               newTask = document.createElement('li')
