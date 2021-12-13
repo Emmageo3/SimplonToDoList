@@ -166,6 +166,24 @@ a img{
   margin-left: 350px;
 }
 
+.newTask{
+  list-style: none;
+  background-color: white;
+  border: 1px solid grey;
+  padding: 1rem;
+  display: flex;
+}
+.details{
+  margin-left: 40rem;
+  width: 20%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background-color: #ec0033;
+  color: #fff;
+  transition: .3s;
+}
+
 
 
 /* Mobile Styles */

@@ -1,5 +1,8 @@
 window.addEventListener("load",function(){
-// ==================================================Fonctionnalite gestion des taches========================================//
+if (this.sessionStorage.getItem("id") == null) {
+  document.location.href = "../connexion.html"
+} else {
+  // ==================================================Fonctionnalite gestion des taches========================================//
 //============================recuperation des donnees du formulaire======
 let apiKey ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzOTA1NTkxNCwiZXhwIjoxOTU0NjMxOTE0fQ.-2XaMjoQGUNkDKV0zxC67vLkbmRO0TJBWfX1FktKxK4"
 let apiUrl ="https://hugjzyfkvsckcizjeztq.supabase.co"
@@ -48,9 +51,15 @@ async function getTaches()
           newTask = document.createElement('li')
           newTask.innerHTML = tache.titre
           task.appendChild(newTask)
+          newTask.setAttribute('class', 'newTask')
+          details = document.createElement('button')
+          details.innerHTML = "Voir les détails"
+          newTask.appendChild(details)
+          details.setAttribute('class', 'details')
         }
       }
 getTaches()
+
 // //fonction de suppression d'une tache
 //       async function deleteTask(id)
 //       {
@@ -68,6 +77,10 @@ getTaches()
 //         //.update({ titre: titre.value,description: description.value, date: deadline.value, etat:etat.value, priorite:priorite.value })
 //         .eq('id',id )
 // }
-submit.addEventListener('click',addTask)
+submit.addEventListener('click',function(){
+  addTask()
+  getTaches()
+})
+}
 
 })

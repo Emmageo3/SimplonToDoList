@@ -3,7 +3,7 @@ window.addEventListener('load',function(){
     let apiUrl ="https://hugjzyfkvsckcizjeztq.supabase.co"
 
     // Creation du client Supabase
-    
+
     supabase = supabase.createClient(apiUrl,apiKey)
     // ==================================================Fonctionnalite Ajouter un Utilisateur========================================//
         // Reccueil des donnees entrees
