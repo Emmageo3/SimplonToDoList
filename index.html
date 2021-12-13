@@ -22,106 +22,113 @@
 <body>
     
    <div id="page">
-
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>
-                        <small>
-                            To Do List 
-                        </small>
-                    </h1>
+       <div class="page2">
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1>
+                                <small>
+                                    To Do List 
+                                </small>
+                            </h1>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </header>
- 
-    <main>
-        <div class="main2">
-             <br>
-            <div class="row main">
-
-                <div class="container mt-3">
-                 
-                    <form id="Form">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-8">
-                                <button class="JPO_open"><img src="img/add.png" height="30px" alt="">  <span class="add">Ajouter une tache</span></button>
-                            </div>
-                            <div class="col-4">
-                                <div class="logout" style="float: right;">
-                                    <a href="connexion.html" >
-                                        <img src="img/power-off.png" alt="deconnexion">
-                                    </a>
+            </header>
+        
+            <main>
+                <div class="main2">
+                    <br>
+                    <div class="row main">
+        
+                        <div class="container mt-3">
+                        
+                            <form id="Form">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-8">
+                                        <button class="JPO_open"><img src="img/add.png" height="30px" alt="">  <span class="add">Ajouter une tache</span></button>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="logout" style="float: right;">
+                                            <a href="connexion.html" >
+                                                <img src="img/power-off.png" alt="deconnexion">
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </form>
-     
-                    <h4 class="mt-4"><img src="img/liste.png" height="30px" alt=""> Mes taches</h4>
-                    <ul id="allTask"></ul>
-                    <form id="tasks">
-                        <ul class="list-group" id="task">
-
-                        </ul>
-                    </form>
+                            </form>
+            
+                            <h4 class="mt-4"><img src="img/liste.png" height="30px" alt=""> Mes taches</h4>
+                            <ul id="allTask row"></ul>
+                            <form id="tasks">
+                                <ul class="list-group" id="task">
         
-                    <h4 class="mt-4"><img src="img/done.png" height="30px" alt="">Taches terminées</h4>
+                                </ul>
+                            </form>
+                
+                            <h4 class="mt-4"><img src="img/done.png" height="30px" alt="">Taches terminées</h4>
+                
+                            <form id="completeForm">
+                                <ul class="list-group" id="completedItems"></ul>
+                                <br>
+                            </form>
         
-                    <form id="completeForm">
-                        <ul class="list-group" id="completedItems"></ul>
-                        <br>
-                    </form>
- 
-                    <section id="JPO"> 
-                        <div class="row close" style="float: right; margin-right: 5px;">
-                            <button class="JPO_close">
-                                <img src="img/cancel.png" height="20px" alt="">
-                            </button>
+                            <section id="JPO"> 
+                                <div class="row close" style="float: right; margin-right: 5px;">
+                                    <button class="JPO_close">
+                                        <img src="img/cancel.png" height="20px" alt="">
+                                    </button>
+                                </div>
+                                <h3>Ajouter une tache</h3>
+                                <p id="erreurSaisie"></p>
+                                <form id="addTask">
+                                    <label for="titre">Titre</label>
+        
+                                    <input type="text" class="form-control" id="titre"><br>
+        
+                                    <label for="Description">Description</label>
+                                    <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
+                                    <label for="deadline">Date</label>
+                                    <input type="date" class="form-control" id="deadline"><br>
+                                    <label for="priorite">Priorité</label>
+                                    <select name="priorite" id="priorite" class="form-control">
+                                        <option value="faible">Faible</option>
+                                        <option value="moyenne">Moyenne</option>
+                                        <option value="forte">Forte</option>
+                                    </select>
+                                    <label for="priorite">Etat</label>
+                                    <select  id="etat" class="form-control">
+                                        <option value="debut">Debut</option>
+                                        <option value="en cours">En cours</option>
+                                        <option value="termine">Termine</option>
+                                    </select>
+                                    <div class="row justify-content-center align-items-center mt-5">
+                                        <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
+                                    </div>
+                                </form>
+            
+        
+                            </section>
+
+                            <section id="detail">
+                                <h1>
+                                    coucou
+                                </h1>
+                            </section>
+                            
+        
+                            
+        
                         </div>
-                        <h3>Ajouter une tache</h3>
-                        <p id="erreurSaisie"></p>
-                        <form id="addTask">
-                            <label for="titre">Titre</label>
-
-                            <input type="text" class="form-control" id="titre"><br>
-
-                            <label for="Description">Description</label>
-                            <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
-                            <label for="deadline">Date</label>
-                            <input type="date" class="form-control" id="deadline"><br>
-                            <label for="priorite">Priorité</label>
-                            <select name="priorite" id="priorite" class="form-control">
-                                <option value="faible">Faible</option>
-                                <option value="moyenne">Moyenne</option>
-                                <option value="forte">Forte</option>
-                            </select>
-                            <label for="priorite">Etat</label>
-                            <select  id="etat" class="form-control">
-                                <option value="debut">Debut</option>
-                                <option value="en cours">En cours</option>
-                                <option value="termine">Termine</option>
-                            </select>
-                            <div class="row justify-content-center align-items-center mt-5">
-                                <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
-                            </div>
-                        </form>
-    
-
-                    </section>
-
-                    
-
+        
+                    </div>
+                    <br>
+                    <br>
                 </div>
- 
-            </div>
-             <br>
-             <br>
-         </div>
-            </div>
-     </main>
-
+                    </div>
+            </main>
+       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
@@ -134,6 +141,18 @@
     
           // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
           $.fn.popup.defaults.pagecontainer = '#page'
+        });
+
+      </script>
+
+      <script>
+        $(document).ready(function() {
+    
+          // Initialize the plugin
+          $('#detail').popup();
+    
+          // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
+          $.fn.popup.defaults.pagecontainer = '#page2'
         });
 
       </script>
