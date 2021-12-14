@@ -100,25 +100,67 @@
                             <div class="col-1"></div>
 
                             <div class="col-3" style="text-align: center;">
-                                <button style="background-color: green; color: white; border: none; padding-left: 1rem; padding-right: 1rem; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;">
+                                <button style="background-color: green; color: white; border: none; width: 100%; border-radius: 10px; padding: 1rem;">
                                     <img src="img/check-mark.png" alt="">Tache terminée
                                 </button>
                             </div>
 
                             <div class="col-3" style="text-align: center;">
-                                <button style="background-color: grey; color: black; border: none; padding-left: 2.5rem; padding-right: 2.5rem; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;">
+                                <button class="JPO_open" style="background-color: grey; color: black; border: none; width: 100%; border-radius: 10px; padding: 1rem;">
                                     <img src="img/editing (1).png" alt="">Modifier
                                 </button>
                             </div>
 
                             <div class="col-3" style="text-align: center;">
-                                <button style="background-color: red; color: white; border: none; padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;">
+                                <button style="background-color: red; color: white; border: none; width: 100%; padding: 1rem; border-radius: 10px;">
                                     <img src="img/bin.png" alt="">Supprimer
                                 </button>
                             </div>
 
                             <div class="col-1"></div>
 
+                        </section>
+
+
+                        <section id="JPO"> 
+                            <div class="row close" style="float: right; margin-right: 5px;">
+                                <button class="JPO_close">
+                                    <img src="img/cancel.png" height="20px" alt="">
+                                </button>
+                            </div>
+
+                            <h3>Ajouter une tache</h3>
+
+                            <p id="erreurSaisie">
+
+                            </p>
+                            
+                            <form id="addTask">
+                                <label for="titre">Titre</label>
+    
+                                <input type="text" class="form-control" id="titre"><br>
+    
+                                <label for="Description">Description</label>
+                                <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
+                                <label for="deadline">Date</label>
+                                <input type="date" class="form-control" id="deadline"><br>
+                                <label for="priorite">Priorité</label>
+                                <select name="priorite" id="priorite" class="form-control">
+                                    <option value="faible">Faible</option>
+                                    <option value="moyenne">Moyenne</option>
+                                    <option value="forte">Forte</option>
+                                </select>
+                                <label for="priorite">Etat</label>
+                                <select  id="etat" class="form-control">
+                                    <option value="debut">Pas commencé</option>
+                                    <option value="en cours">En cours</option>
+                                </select>
+                                <div class="row justify-content-center align-items-center mt-5">
+                                    <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
+                                </div>
+                            </form>
+        
+    
                         </section>
                         
                         
