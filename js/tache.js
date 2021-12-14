@@ -1,6 +1,6 @@
 window.addEventListener("load",function(){
   if (this.sessionStorage.getItem("id") == null) {
-    document.location.href = "../connexion.html"
+    document.location.href = "connexion.html"
   } else {
   // ==================================================Fonctionnalite gestion des taches========================================//
 //============================recuperation des donnees du formulaire======
@@ -62,10 +62,15 @@ window.addEventListener("load",function(){
               newTask.setAttribute('class', 'newTask row')
               division.setAttribute('class', 'division align-items-center justify-content-center col-6')
               details = document.createElement('button')
-              details.innerHTML = "Voir les détails"
+              
               newTask.appendChild(details)
               details.setAttribute('class', 'details col-6')
               details.setAttribute('id', 'details')
+              deatailsLink = document.createElement('a')
+              details.appendChild(deatailsLink)
+              deatailsLink.href = "details.html"
+              deatailsLink.innerHTML = "Voir les détails"
+
               if (tache.priorite == "forte") {
                 newTask.style.border='4px solid red';
                 newTask.style.color = 'black  '
@@ -79,10 +84,21 @@ window.addEventListener("load",function(){
                 details.style.backgroundColor = 'grey'
                 details.style.color = 'white'
               }
+              if (tache.etat == "termine") {
+                task.removeChild(newTask)
+                completedTask = document.createElement('li')
+                completedItems.appendChild(completedTask)
+                completedTask.innerHTML = tache.titre
+                completedTask.setAttribute('class', 'completedTask')
+              }
+
+              
             }
             
           }
     getTaches()
+
+   
 
 
           async function deleteTask(id)
@@ -106,4 +122,5 @@ window.addEventListener("load",function(){
       getTaches()
     })
     }
+    
   })

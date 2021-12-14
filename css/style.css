@@ -189,6 +189,21 @@ img{
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+.completedTask{
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  background-color: white;
+  border: 1px solid grey;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+.details a{
+  color: white;
+}
+
+
 
 
 

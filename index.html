@@ -23,7 +23,6 @@
 <body>
     
    <div id="page">
-       <div class="page2">
             <header>
                 <div class="container">
                     <div class="row">
@@ -38,12 +37,9 @@
             </header>
         
             <main>
-                <div class="main2">
-                    <br>
+                <div class="main2"><br>
                     <div class="row main">
-        
                         <div class="container mt-3">
-                        
                             <form id="Form">
                                 <div class="row align-items-center justify-content-center">
                                     <div class="col-8">
@@ -51,9 +47,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div class="logout" style="float: right;">
-                                            
-                                                <img src="img/power-off.png" alt="deconnexion" id="deconnexion">
-                                            
+                                            <img src="img/power-off.png" alt="deconnexion" id="deconnexion">   
                                         </div>
                                     </div>
                                 </div>
@@ -71,18 +65,28 @@
                                 </div>
                             </div>
             
-                            <h4 class="mt-4"><img src="img/liste.png" height="30px" alt=""> Mes taches</h4>
-                            <ul id="allTask row"></ul>
+                            <h4 class="mt-4">
+                                <img src="img/liste.png" height="30px" alt=""> Mes taches
+                            </h4>
+
+                            <ul id="allTask row">
+
+                            </ul>
+
                             <form id="tasks">
                                 <ul class="list-group" id="task">
         
                                 </ul>
                             </form>
                 
-                            <h4 class="mt-4"><img src="img/done.png" height="30px" alt="">Taches terminées</h4>
+                            <h4 class="mt-4">
+                                <img src="img/done.png" height="30px" alt="">Taches terminées
+                            </h4>
                 
                             <form id="completeForm">
-                                <ul class="list-group" id="completedItems"></ul>
+                                <ul class="list-group" id="completedItems">
+
+                                </ul>
                                 <br>
                             </form>
         
@@ -92,8 +96,13 @@
                                         <img src="img/cancel.png" height="20px" alt="">
                                     </button>
                                 </div>
+
                                 <h3>Ajouter une tache</h3>
-                                <p id="erreurSaisie"></p>
+
+                                <p id="erreurSaisie">
+
+                                </p>
+                                
                                 <form id="addTask">
                                     <label for="titre">Titre</label>
         
@@ -111,9 +120,8 @@
                                     </select>
                                     <label for="priorite">Etat</label>
                                     <select  id="etat" class="form-control">
-                                        <option value="debut">Debut</option>
+                                        <option value="debut">Pas commencé</option>
                                         <option value="en cours">En cours</option>
-                                        <option value="termine">Termine</option>
                                     </select>
                                     <div class="row justify-content-center align-items-center mt-5">
                                         <input type="submit" class="btn JPO_close" id="submit" value="Valider" >
@@ -121,12 +129,6 @@
                                 </form>
             
         
-                            </section>
-
-                            <section id="detail">
-                                <h1>
-                                    coucou
-                                </h1>
                             </section>
                             
         
@@ -140,7 +142,7 @@
                 </div>
                     </div>
             </main>
-       </div>
+       
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
@@ -157,17 +159,7 @@
 
       </script>
 
-      <script>
-        $(document).ready(function() {
-    
-          // Initialize the plugin
-          $('#detail').popup();
-    
-          // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
-          $.fn.popup.defaults.pagecontainer = '#page2'
-        });
-
-      </script>
+      
 
       
 
