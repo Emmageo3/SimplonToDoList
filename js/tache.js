@@ -67,14 +67,14 @@ window.addEventListener("load",function(){
                 newTask.style.border='4px solid red';
                 newTask.style.color = 'black  '
                 details.style.backgroundColor = 'grey'
-                details.style.color = 'black'
+                details.style.color = 'white'
               }
 
               if (tache.priorite == "moyenne") {
                 newTask.style.border='4px solid orange ';
                 newTask.style.color = 'black'
                 details.style.backgroundColor = 'grey'
-                details.style.color = 'black'
+                details.style.color = 'white'
               }
             }
             
