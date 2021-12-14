@@ -73,8 +73,7 @@ window.addEventListener("load",function(){
                 document.location.href= "details.html"
               })
               details.appendChild(deatailsLink)
-              deatailsLink.innerHTML = "Voir les détails"
-             
+              deatailsLink.innerHTML = "Voir les détails" 
               if (tache.priorite == "forte") {
                 newTask.style.border='4px solid red';
                 newTask.style.color = 'black  '

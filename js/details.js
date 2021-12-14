@@ -106,7 +106,6 @@ window.addEventListener("load",function(){
               
               taskFinish.addEventListener("click",function(){
                 finishTask(localStorage.getItem("idTache"))
-                document.location.href="../index.html"
                 
               })
 
