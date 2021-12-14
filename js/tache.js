@@ -41,6 +41,7 @@ window.addEventListener("load",function(){
                     if (titre.value = "" || description.value == "" || date.value == "" || etat.value == "" || priorite.value == "") {
                       erreurSaisie.innerHTML = "Les champs ne doivent pas etre vides !!"
                     }
+                   
                   
     }
     //fonction de lister les taches
@@ -73,6 +74,7 @@ window.addEventListener("load",function(){
               })
               details.appendChild(deatailsLink)
               deatailsLink.innerHTML = "Voir les détails"
+             
               if (tache.priorite == "forte") {
                 newTask.style.border='4px solid red';
                 newTask.style.color = 'black  '
@@ -96,9 +98,10 @@ window.addEventListener("load",function(){
 
               
             }
-            
           }
     getTaches()
+
+    
 
     //     //fonction de modification d'une tache
     // async function updateTask(id)
@@ -111,7 +114,9 @@ window.addEventListener("load",function(){
     // }
     submit.addEventListener('click',function(){
       addTask()
+      window.location.reload()
       getTaches()
+      
     })
     }
     
