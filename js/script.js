@@ -20,7 +20,7 @@ window.addEventListener('load',function(){
         .from("user")
         .select()
         .eq("email",email.value.toLowerCase())
-        .eq("password",password.value)
+        .eq("password",sha256(password.value))
         .then((data)=>{
             // email ou mot de passe invalide
             if (data.body.length == 0) {
@@ -29,9 +29,10 @@ window.addEventListener('load',function(){
             } 
             // Redirection vers la page des taches
             else {
-                console.log(data.body[0].id);
                 sessionStorage.setItem("email",data.body[0].email)
                 sessionStorage.setItem("id",data.body[0].id)
+                sessionStorage.setItem("prenom",data.body[0].prenom)
+                sessionStorage.setItem("nom",data.body[0].nom)
                 document.location.href="../index.html"
 
 

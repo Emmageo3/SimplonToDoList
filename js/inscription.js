@@ -43,7 +43,7 @@ window.addEventListener('load',function(){
                         supabase
                         .from("user")
                         .insert({email:email.value.toLowerCase(),
-                                password:mdp.value.toLowerCase(),
+                                password:sha256(mdp.value.toLowerCase()),
                                 prenom:prenom.value.toLowerCase(),
                                 nom:nom.value.toLowerCase()
                         })
