@@ -62,15 +62,17 @@ window.addEventListener("load",function(){
               newTask.setAttribute('class', 'newTask row')
               division.setAttribute('class', 'division align-items-center justify-content-center col-6')
               details = document.createElement('button')
-              
               newTask.appendChild(details)
               details.setAttribute('class', 'details col-6')
-              details.setAttribute('id', 'details')
+              details.setAttribute('id', tache.id)
               deatailsLink = document.createElement('a')
+              deatailsLink.addEventListener("click",function(e){
+                e.preventDefault()
+                localStorage.setItem("idTache",tache.id)
+                document.location.href= "details.html"
+              })
               details.appendChild(deatailsLink)
-              deatailsLink.href = "details.html"
               deatailsLink.innerHTML = "Voir les détails"
-
               if (tache.priorite == "forte") {
                 newTask.style.border='4px solid red';
                 newTask.style.color = 'black  '
@@ -98,16 +100,6 @@ window.addEventListener("load",function(){
           }
     getTaches()
 
-   
-
-
-          async function deleteTask(id)
-        {
-            let { data, error } = await supabase
-            .from('taches')
-            .delete()
-            .eq('id', id)
-        }
     //     //fonction de modification d'une tache
     // async function updateTask(id)
     // {
