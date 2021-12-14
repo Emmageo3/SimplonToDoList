@@ -5,6 +5,11 @@ window.addEventListener("load",function(){
         // Creation du client Supabase
     supabase = supabase.createClient(apiUrl,apiKey)
     let supprimer = document.getElementById("supprimer")
+    const title=document.querySelector("#title")
+    const description=document.querySelector("#desc")
+    const deadline=document.querySelector("#deadline")
+    const priorite=this.document.querySelector("#priorite")
+    const etat=document.querySelector("#etat")
         // Handle delete btn
         supprimer.addEventListener("click",(e)=>{
             e.preventDefault()
@@ -25,4 +30,23 @@ window.addEventListener("load",function(){
                    alert("Ok")
                  }
               }
+
+              async function detailstask(id)
+              {
+                let { data: tache, error } = await supabase
+                  .from('taches')
+                  .select()
+                  .eq("id",id)
+                  console.log(tache)
+                  title.innerHTML=tache[0].titre
+                  description.innerHTML=tache[0].description
+                  deadline.innerHTML=tache[0].date
+                  priorite.innerHTML=tache[0].priorite
+                  etat.innerHTML=tache[0].etat
+              }
+              detailstask(localStorage.getItem("idTache"))
+              console.log(localStorage.getItem("idTache"))
+              console.log(detailstask(localStorage.getItem("idTache")));
+            
 })
+
