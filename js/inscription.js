@@ -51,7 +51,7 @@ window.addEventListener('load',function(){
                         console.log(data.body[0].id);
                         sessionStorage.setItem("email",data.body[0].email)
                         sessionStorage.setItem("id",data.body[0].id)
-                        document.location.href="../connexion.html"
+                        document.location.href="connexion.html"
                         })
                     } 
                     // si l'email existe deja
