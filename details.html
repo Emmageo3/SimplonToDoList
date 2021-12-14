@@ -100,13 +100,13 @@
                             <div class="col-1"></div>
 
                             <div class="col-3" style="text-align: center;">
-                                <button style="background-color: green; color: white; border: none; width: 100%; border-radius: 10px; padding: 1rem;">
+                                <button style="background-color: green; color: white; border: none; width: 100%; border-radius: 10px; padding: 1rem;" id="finish">
                                     <img src="img/check-mark.png" alt="">Tache terminée
                                 </button>
                             </div>
 
                             <div class="col-3" style="text-align: center;">
-                                <button class="JPO_open" style="background-color: grey; color: black; border: none; width: 100%; border-radius: 10px; padding: 1rem;">
+                                <button class="JPO_open modifier" style="background-color: grey; color: black; border: none; width: 100%; border-radius: 10px; padding: 1rem;">
                                     <img src="img/editing (1).png" alt="">Modifier
                                 </button>
                             </div>
@@ -137,21 +137,19 @@
                             
                             <form id="addTask">
                                 <label for="titre">Titre</label>
-    
-                                <input type="text" class="form-control" id="titre"><br>
-    
+                                <input type="text" class="form-control toto" id="titre"><br>
                                 <label for="Description">Description</label>
                                 <textarea maxlength="500" class="form-control" id="Description"></textarea><br>
                                 <label for="deadline">Date</label>
-                                <input type="date" class="form-control" id="deadline"><br>
+                                <input type="date" class="form-control" id="modifdeadline"><br>
                                 <label for="priorite">Priorité</label>
-                                <select name="priorite" id="priorite" class="form-control">
+                                <select name="modifpriorite" id="modifpriorite" class="form-control">
                                     <option value="faible">Faible</option>
                                     <option value="moyenne">Moyenne</option>
                                     <option value="forte">Forte</option>
                                 </select>
                                 <label for="priorite">Etat</label>
-                                <select  id="etat" class="form-control">
+                                <select  id="modifetat" class="form-control">
                                     <option value="debut">Pas commencé</option>
                                     <option value="en cours">En cours</option>
                                 </select>
