@@ -142,7 +142,7 @@ h4 {
     height: 45px;
   }
   
-  .JPO_open{
+  .return{
     padding: 15px;
     border: none;
     border-radius: 15px;
@@ -189,3 +189,12 @@ h4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+.return{
+  padding: 1.5rem;
+}
+
+.return:hover{
+  color: white;
+  text-decoration: none;
+}

@@ -51,7 +51,7 @@
                         <form id="Form">
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-8">
-                                    <button class="JPO_open"><img src="img/left-arrow.png" height="30px" alt="">  <span class="add">Retourner a la liste des taches</span></button>
+                                    <a href="index.html" class="return" id="return"><img src="img/left-arrow.png" height="30px" alt="">  <span class="add">Retourner a la liste des taches</span></a>
                                 </div>
                                 <div class="col-4">
                                     
@@ -179,7 +179,7 @@
     </div>
 
 
-
+    <script src="js/details.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
 
@@ -192,6 +192,11 @@
           // Set default `pagecontainer` for all popups (optional, but recommended for screen readers and iOS*)
           $.fn.popup.defaults.pagecontainer = '#page'
         });
+
+        let retour = document.getElementById('return')
+        retour.addEventListener('click', function(){
+            document.location.href = "index.html"
+        })
 
       </script>
 
