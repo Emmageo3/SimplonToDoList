@@ -87,7 +87,7 @@ window.addEventListener("load",function(){
                 details.style.backgroundColor = 'grey'
                 details.style.color = 'white'
               }
-              if (tache.etat == "termine") {
+              if (tache.etat == "Termine") {
                 task.removeChild(newTask)
                 completedTask = document.createElement('li')
                 completedItems.appendChild(completedTask)

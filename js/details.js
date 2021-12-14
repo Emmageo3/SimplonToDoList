@@ -92,6 +92,7 @@ window.addEventListener("load",function(){
               }
 
               async function finishTask(id)
+              
               {
                   let { data, error } = await supabase
                       .from('taches')
@@ -106,7 +107,6 @@ window.addEventListener("load",function(){
               
               taskFinish.addEventListener("click",function(){
                 finishTask(localStorage.getItem("idTache"))
-                
               })
 
 
