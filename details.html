@@ -63,35 +63,28 @@
                         
                        <section class="moreDetails">
 
-                            <section>
-                                <div class="row mt-4" style="border: 1px solid white; background-color: white; padding: 1rem;">
-                                    Titre : <span id="title">  </span>
-                                </div>
-                            </section>
+                            <div style="border: 1px solid white; background-color: white; padding: 1rem; font-size: 1.5rem;" class="row justify-content-center mt-4" id="title"></div>
 
-                            <section>
-                                <div class="row mt-4" style="border: 1px solid white; background-color: white; padding: 1rem;">
-                                    Description : <span id="desc">  </span>
+                            <div class="row ">
+                                <div class="col-6 mt-4" id="desc" style="background-color: white; padding-bottom: 6rem;">
+                                    
                                 </div>
-                            </section>
-
-                            <section>
-                                <div class="row mt-4" style="border: 1px solid white; background-color: white; padding: 1rem;">
-                                    Deadline : <span id="deadline">  </span>
+                                <div class="col-1"></div>
+                                <div class="col-5">
+                                    <div class="row mt-4 justify-content-center" style="background-color: white;">
+                                        <img src="img/deadline.png" alt="">
+                                        <div id="deadline"></div>
+                                    </div>
+                                    <div class="row mt-4 justify-content-center" style="background-color: white; padding: .5rem;">
+                                        priorité :
+                                        <div id="priorite"></div>
+                                    </div>
+                                    <div class="row mt-4 justify-content-center" style="background-color: white; padding: .5rem;">
+                                        Etat :
+                                        <div id="etat" > </div>
+                                    </div>
                                 </div>
-                            </section>
-                            
-                            <section>
-                                <div class="row mt-4" style="border: 1px solid white; background-color: white; padding: 1rem;">
-                                    Priorité : <span id="priorite">  </span>
-                                </div>
-                            </section>
-
-                            <section>
-                                <div class="row mt-4" style="border: 1px solid white; background-color: white; padding: 1rem;">
-                                    Etat : <span id="etat">  </span>
-                                </div>
-                            </section>
+                            </div>
 
                        </section>
 
@@ -179,7 +172,7 @@
     </div>
 
 
-    <script src="js/details.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/vast-engineering/jquery-popup-overlay@2/jquery.popupoverlay.min.js"></script>
 
