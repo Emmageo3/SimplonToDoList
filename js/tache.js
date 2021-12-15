@@ -36,6 +36,7 @@ window.addEventListener("load",function(){
                 ]).then(function(data)
                     {
                         console.log(data)
+                        document.location.href= "index.html"
                     })
 
                     if (titre.value = "" || description.value == "" || date.value == "" || etat.value == "" || priorite.value == "") {
