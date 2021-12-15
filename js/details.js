@@ -94,10 +94,16 @@ window.addEventListener("load",function(){
               async function finishTask(id)
               
               {
+                confirmFinish = window.confirm("Voulez vous vraiment terminer ?")
+                 if (confirmFinish == true) {
                   let { data, error } = await supabase
                       .from('taches')
                       .update({etat:"Termine"})
                       .eq('id',id )
+                      document.location.href = "index.html"
+                 }else{
+                   alert('ok')
+                 }
               }
 
               btnValidModif.addEventListener("click",function(){

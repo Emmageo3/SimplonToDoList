@@ -113,10 +113,12 @@ window.addEventListener("load",function(){
     // }
     submit.addEventListener('click',function(){
       addTask()
-      window.location.reload()
-      getTaches()
-      
+      getTaches()  
     })
+
+    
     }
     
   })
+
+  
