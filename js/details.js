@@ -85,10 +85,16 @@ window.addEventListener("load",function(){
               })
               async function updateTask(id)
               {
+                confirmEdit = window.confirm("Etes-vous sur ?")
+                 if (confirmEdit == true) {
                   let { data, error } = await supabase
                       .from('taches')
                       .update({ titre: modifTitre.value,description: modifDescription.value, date: modifDeadline.value, etat:modifEtat.value, priorite: modifPriorite.value})
                       .eq('id',id )
+                      document.location.href = "details.html"
+                 }else{
+                   alert('ok')
+                 }
               }
 
               async function finishTask(id)

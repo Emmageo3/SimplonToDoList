@@ -36,7 +36,7 @@ window.addEventListener("load",function(){
                 ]).then(function(data)
                     {
                         console.log(data)
-                        document.location.href= "index.html"
+                        window.location.reload()
                     })
 
                     if (titre.value = "" || description.value == "" || date.value == "" || etat.value == "" || priorite.value == "") {
@@ -91,9 +91,24 @@ window.addEventListener("load",function(){
               if (tache.etat == "Termine") {
                 task.removeChild(newTask)
                 completedTask = document.createElement('li')
+                division1 = document.createElement('div')
+                completedTask.appendChild(division1)
+                division1.innerHTML = tache.titre
                 completedItems.appendChild(completedTask)
-                completedTask.innerHTML = tache.titre
-                completedTask.setAttribute('class', 'completedTask')
+                completedTask.setAttribute('class', 'completedTask row')
+                division1.setAttribute('class', 'division align-items-center justify-content-center col-6')
+                details1 = document.createElement('button')
+                completedTask.appendChild(details1)
+                details1.setAttribute('class', 'details col-6')
+                details1.setAttribute('id', tache.id)
+                detailsLink = document.createElement('a')
+                detailsLink.addEventListener("click",function(e){
+                  e.preventDefault()
+                  localStorage.setItem("idTache",tache.id)
+                  document.location.href= "details.html"
+                })
+                details1.appendChild(detailsLink)
+              detailsLink.innerHTML = "Voir les détails" 
               }
 
               
